@@ -2,9 +2,8 @@ import random
 
 def play():
     user = input("faça sua escola, utilize apenas:\nPedra, papel ou tesoura\n")
-    escolhas = ['pedra', 'papel', 'tesoura']
-    computer = random.choice(escolhas)
-    print
+    computer = random.choice(['pedra', 'papel', 'tesoura'])
+
     print ('escolha do computador foi {}'.format(computer))
     if user == computer:
         return 'Empate'
@@ -14,13 +13,13 @@ def play():
         
         return '\n\033[32mVocê ganhou' #\n\033[31m imprime em uma cor (33m) = verde
         
+    else:
+        return '\n\033[31mVocê perdeu' #\n\033[31m imprime em uma cor (31m) = vermelho
 
-    return '\n\033[31mVocê perdeu' #\n\033[31m imprime em uma cor (31m) = vermelho
-
-def is_win(player, opponent):
+def is_win(user, opponent):
     # return true se o jogador ganhou
-    if (player == 'pedra' and opponent == 'tesoura') or (player == 'tesoura' and opponent == 'papel') \
-        or (player == 'papel' and opponent == 'pedra'):
+    if (user == 'pedra' and computer == 'tesoura') or (user == 'tesoura' and computer == 'papel') \
+        or (user == 'papel' and computer == 'pedra'):
            
             return True
         
